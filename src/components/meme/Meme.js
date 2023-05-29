@@ -1,4 +1,9 @@
 /**
+ * Internal dependencies
+ */
+import "./style.css";
+
+/**
  * Render component
  *
  * @param {Object} attributes           Component attributes.
@@ -9,11 +14,15 @@
  */
 const Meme = ({ title, img, upvotes, downvotes }) => {
     return (
-        <div>
+        <div className="meme">
             <h2>{title}</h2>
             <img src={`/img/${img}`} alt={title} loading="lazy" />
-            <button>Up {upvotes}</button>
-            <button>Down {downvotes}</button>
+            <div className="meme__actions">
+                <button className="meme__actions--up">Up {upvotes}</button>
+                <button className="meme__actions--down">
+                    Down {downvotes}
+                </button>
+            </div>
         </div>
     );
 };

@@ -1,33 +1,13 @@
 /**
- * External dependencies
- */
-import { useSelector } from "react-redux";
-
-/**
  * Internal dependencies
  */
-import Meme from "../components/meme/Meme.js";
+import Stream from "../components/stream/Stream.js";
 
 /**
  * Render components
  */
 const HotPage = () => {
-    const memes = useSelector((state) => state.memes.value);
-    return (
-        <div>
-            {memes.map((meme, index) => {
-                return (
-                    <Meme
-                        key={index}
-                        title={meme.title}
-                        img={meme.img}
-                        upvotes={meme.upvotes}
-                        downvotes={meme.downvotes}
-                    />
-                );
-            })}
-        </div>
-    );
+    return <Stream type="hot" />;
 };
 
 export default HotPage;

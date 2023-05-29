@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
 /**
  * Internal dependencies
@@ -13,23 +13,24 @@ import "./style.css";
  */
 const Layout = () => {
     return (
-        <>
-            <nav>
+        <div className="app">
+            <nav className="app__menu">
                 <ul>
                     <li>
-                        <Link to="/">Home</Link>
+                        <NavLink to="/">Home</NavLink>
                     </li>
                     <li>
-                        <Link to="/hot">Hot</Link>
+                        <NavLink to="/hot">Hot</NavLink>
                     </li>
                     <li>
-                        <Link to="/regular">Regular</Link>
+                        <NavLink to="/regular">Regular</NavLink>
                     </li>
                 </ul>
             </nav>
-
-            <Outlet />
-        </>
+            <main>
+                <Outlet />
+            </main>
+        </div>
     );
 };
 

@@ -1,0 +1,45 @@
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+.app .app__menu {
+    width: 250px;
+    background-color: rgb(136, 157, 219);
+    border-right: 1px solid black;
+    padding: 30px;
+}
+
+.app .app__menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.app .app__menu a {
+    color: black;
+    font-weight: bold;
+    padding: 12px 16px;
+    display: block;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.app .app__menu a:hover,
+.app .app__menu a:focus {
+    background-color: gray;
+    color: white;
+}
+
+.app .app__menu a.active {
+    background-color: rgb(112, 168, 241);
+}
+.app main {
+    flex: 1;
+    overflow-y: scroll;
+}

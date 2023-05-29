@@ -1,0 +1,36 @@
+.meme {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 30px;
+    gap: 30px;
+}
+
+.meme h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.meme__actions {
+    display: flex;
+    gap: 30px;
+}
+
+.meme__actions button {
+    flex: 1;
+    border: 0;
+    border-radius: 3px;
+    padding: 10px 0;
+    color: white;
+    font-weight: bold;
+}
+
+.meme__actions button.meme__actions--up {
+    background-color: rgb(38, 114, 38);
+}
+
+.meme__actions button.meme__actions--down {
+    background-color: rgb(216, 52, 52);
+    border: 0;
+    border-radius: 3px;
+}
