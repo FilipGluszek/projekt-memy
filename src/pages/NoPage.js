@@ -2,7 +2,7 @@
  * Render components
  */
 const NoPage = () => {
-  return <div>Nie znaleziono</div>;
+    return <div>Nie znaleziono</div>;
 };
 
 export default NoPage;

@@ -2,7 +2,7 @@
  * Render components
  */
 const RegularPage = () => {
-  return <div>RegularPage</div>;
+    return <div>RegularPage</div>;
 };
 
 export default RegularPage;
