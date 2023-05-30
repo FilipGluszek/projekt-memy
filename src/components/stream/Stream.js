@@ -18,7 +18,12 @@ import "./style.css";
  */
 
 const Stream = ({ type }) => {
-    const memes = useSelector((state) => state.memes.value);
+    const memes = useSelector((state) =>
+        state.memes.value.filter((meme) => {
+            const isHot = meme.upvotes - meme.downvotes > 5;
+            return "hot" === type ? isHot : !isHot;
+        })
+    );
     const dispatch = useDispatch();
 
     return (
