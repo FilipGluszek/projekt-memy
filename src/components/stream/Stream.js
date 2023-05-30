@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
  * Internal dependencies
  */
 import Meme from "../meme/Meme.js";
-import { upvote, downvote } from "../../store/memesSlice.js";
+import { upvote, downvote, starChange } from "../../store/memesSlice.js";
 import "./style.css";
 
 /**
@@ -43,11 +43,15 @@ const Stream = ({ type }) => {
                             img={meme.img}
                             upvotes={meme.upvotes}
                             downvotes={meme.downvotes}
+                            isStarred={meme.isStarred}
                             onUpvote={() =>
                                 dispatch(upvote({ memeId: meme.id }))
                             }
                             onDownvote={() =>
                                 dispatch(downvote({ memeId: meme.id }))
+                            }
+                            onStarChange={() =>
+                                dispatch(starChange({ memeId: meme.id }))
                             }
                         />
                     );

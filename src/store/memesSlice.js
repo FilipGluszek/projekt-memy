@@ -16,6 +16,7 @@ export const memesSlice = createSlice({
                 upvotes: 0,
                 downvotes: 0,
                 img: "mem-1.jpg",
+                isStarred: true,
             },
             {
                 id: 2,
@@ -23,6 +24,7 @@ export const memesSlice = createSlice({
                 upvotes: 0,
                 downvotes: 0,
                 img: "mem-2.jpg",
+                isStarred: false,
             },
             {
                 id: 3,
@@ -30,6 +32,7 @@ export const memesSlice = createSlice({
                 upvotes: 0,
                 downvotes: 0,
                 img: "mem-3.jpg",
+                isStarred: false,
             },
         ],
     },
@@ -56,8 +59,19 @@ export const memesSlice = createSlice({
                 };
             });
         },
+        starChange: (state, action) => {
+            state.value = state.value.map((meme) => {
+                return {
+                    ...meme,
+                    isStarred:
+                        meme.id === action.payload.memeId
+                            ? !meme.isStarred
+                            : meme.isStarred,
+                };
+            });
+        },
     },
 });
 
-export const { upvote, downvote } = memesSlice.actions;
+export const { upvote, downvote, starChange } = memesSlice.actions;
 export default memesSlice.reducer;
