@@ -1,12 +1,13 @@
 /**
  * External dependencies
  */
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 /**
  * Internal dependencies
  */
 import Meme from "../meme/Meme.js";
+import { upvote, downvote } from "../../store/memesSlice.js";
 import "./style.css";
 
 /**
@@ -18,17 +19,22 @@ import "./style.css";
 
 const Stream = ({ type }) => {
     const memes = useSelector((state) => state.memes.value);
+    const dispatch = useDispatch();
 
     return (
-        <div class="stream">
-            {memes.map((meme, index) => {
+        <div className="stream">
+            {memes.map((meme) => {
                 return (
                     <Meme
-                        key={index}
+                        key={meme.id}
                         title={meme.title}
                         img={meme.img}
                         upvotes={meme.upvotes}
                         downvotes={meme.downvotes}
+                        onUpvote={() => dispatch(upvote({ memeId: meme.id }))}
+                        onDownvote={() =>
+                            dispatch(downvote({ memeId: meme.id }))
+                        }
                     />
                 );
             })}
