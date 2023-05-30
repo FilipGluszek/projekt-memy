@@ -28,21 +28,31 @@ const Stream = ({ type }) => {
 
     return (
         <div className="stream">
-            {memes.map((meme) => {
-                return (
-                    <Meme
-                        key={meme.id}
-                        title={meme.title}
-                        img={meme.img}
-                        upvotes={meme.upvotes}
-                        downvotes={meme.downvotes}
-                        onUpvote={() => dispatch(upvote({ memeId: meme.id }))}
-                        onDownvote={() =>
-                            dispatch(downvote({ memeId: meme.id }))
-                        }
-                    />
-                );
-            })}
+            {0 === memes.length ? (
+                <div className="notice">
+                    <p>
+                        Wygląda na to, że nic tu nie ma. Wpadnij za jakiś czas!
+                    </p>
+                </div>
+            ) : (
+                memes.map((meme) => {
+                    return (
+                        <Meme
+                            key={meme.id}
+                            title={meme.title}
+                            img={meme.img}
+                            upvotes={meme.upvotes}
+                            downvotes={meme.downvotes}
+                            onUpvote={() =>
+                                dispatch(upvote({ memeId: meme.id }))
+                            }
+                            onDownvote={() =>
+                                dispatch(downvote({ memeId: meme.id }))
+                            }
+                        />
+                    );
+                })
+            )}
         </div>
     );
 };

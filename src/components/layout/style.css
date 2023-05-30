@@ -1,13 +1,28 @@
 .app {
     display: flex;
     height: 100vh;
+    flex-direction: column;
+}
+
+@media (min-width: 769px) {
+    .app {
+        flex-direction: row;
+    }
 }
 
 .app .app__menu {
-    width: 250px;
     background-color: rgb(136, 157, 219);
-    border-right: 1px solid black;
-    padding: 30px;
+    border-bottom: 1px solid black;
+    padding: 20px 30px;
+}
+
+@media (min-width: 769px) {
+    .app .app__menu {
+        width: 250px;
+        border-bottom: 0;
+        border-right: 1px solid black;
+        padding: 30px;
+    }
 }
 
 .app .app__menu ul {
@@ -15,8 +30,17 @@
     padding: 0;
     list-style: none;
     display: flex;
-    flex-direction: column;
     gap: 6px;
+}
+
+@media (min-width: 769px) {
+    .app .app__menu ul {
+        flex-direction: column;
+    }
+}
+
+.app .app__menu ul li {
+    flex: 1;
 }
 
 .app .app__menu a {
@@ -42,4 +66,14 @@
 .app main {
     flex: 1;
     overflow-y: scroll;
+}
+
+.app .notice {
+    max-width: 460px;
+    margin: 0 auto;
+}
+
+.app .notice p {
+    text-align: center;
+    font-weight: bold;
 }

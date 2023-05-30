@@ -4,6 +4,8 @@
     border: 1px solid black;
     padding: 30px;
     gap: 30px;
+    max-width: 460px;
+    width: 100%;
 }
 
 .meme h2 {
@@ -17,6 +19,7 @@
 }
 
 .meme__actions button {
+    cursor: pointer;
     flex: 1;
     border: 0;
     border-radius: 3px;

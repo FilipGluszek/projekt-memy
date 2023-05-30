@@ -11,7 +11,6 @@ import HomePage from "../../pages/HomePage.js";
 import HotPage from "../../pages/HotPage.js";
 import NoPage from "../../pages/NoPage.js";
 import RegularPage from "../../pages/RegularPage.js";
-import "./style.css";
 
 /**
  * App component
